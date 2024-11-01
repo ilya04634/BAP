@@ -331,7 +331,7 @@ class Knight(Figure):
         if mode == 'common':
             show = battlefield.field
         elif mode == 'check':
-            show = battlefield.field[:][:]  # Мб вызываю неправильно (посмотри на аргументы AddMoves и team)
+            show = battlefield.field[:][:]  # Мб вызываю неправильно
         elif mode == 'WhoAttack':
             show = battlefield.field[:][:]
             attackers = []
@@ -371,14 +371,14 @@ class Goose(Figure):
         show = AddShow if AddShow is not None else battlefield.field
 
         if mode == 'check':
-            show = battlefield.field[:][:]  # Deep copy of the board
+            show = battlefield.field[:][:]
         elif mode == 'WhoAttack':
             attackers = []
             show = battlefield.field[:][:]
 
         enemy = Black if self.team == White else White
 
-        # Списки возможных ходов для гуся
+        # возможные ходы для гуся
         diagonals = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
         straight_steps = [(2, 0), (-2, 0), (0, 2), (0, -2)]
 
